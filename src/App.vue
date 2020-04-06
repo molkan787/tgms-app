@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+
+    <v-content>
+      <Accounts/>
+    </v-content>
+    <AddAccount />
+    <Actions />
+    <ScrapeMembers />
+    <DataDirSelector />
+    <Dialog />
+
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Accounts from './components/Accounts';
+import AddAccount from './components/AddAccount';
+import Actions from './components/Actions';
+import Dialog from './components/Dialog';
+import DataDirSelector from './components/DataDirSelector';
+import ScrapeMembers from './components/ScrapeMembers'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
+    Accounts,
+    AddAccount,
+    Dialog,
+    Actions,
+    DataDirSelector,
+    ScrapeMembers
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

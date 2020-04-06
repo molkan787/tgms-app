@@ -5,7 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>tgms</title>
+    <title>TGMS Marketing</title>
+    <script>
+      window._require = require;
+      const remote = require('electron').remote;
+      window.DEV = remote.getGlobal('DEV');
+      window.app = remote.app;
+      window.req = pn => remote.require(pn);
+      window.onkeypress = function(e) {
+        if(e.keyCode == 9){
+          const currentWindow = require('electron').remote.getCurrentWindow()
+          currentWindow.openDevTools()
+        }
+      }
+    </script>
   </head>
   <body>
     <noscript>
